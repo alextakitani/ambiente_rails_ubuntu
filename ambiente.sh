@@ -80,3 +80,6 @@ cd ~
 rvm use 1.9.3
 
 gem install bundler
+
+##carrega minhas configs de vim
+# .vimrc.local
