@@ -107,6 +107,10 @@ imap <right> <right>
 set mouse=a
 set ttymouse=xterm2
 
+"control+s salva
+nmap <C-s> :w<CR>
+imap <silent><C-s> <ESC>:w<CR>a
+
 End-of-message
 
 
