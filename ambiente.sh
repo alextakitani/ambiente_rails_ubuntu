@@ -69,7 +69,8 @@ git clone https://github.com/krisleech/vimfiles ~/.vim
 cd ~/.vim
 rake install
 
-ln -s ~/.vim/vimrc ~/.vimrc
+echo ".vimrc copiado, não esqueça de editar..."
+cp ~/.vim/vimrc ~/.vimrc.temp
 
 cd ~/.vim/bundle/command-t/ruby/command-t/
 make clean
@@ -81,5 +82,32 @@ rvm use 1.9.3
 
 gem install bundler
 
+#substitui o leader do .vimrc
+sed 's/","/";"/gpw ~/.vimrc' ~/.vimrc.temp
+rm .vimrc.temp
+
 ##carrega minhas configs de vim
 # .vimrc.local
+
+cat > .vimrc.local <<End-of-message
+"configura fonte
+set guifont=Monospace\ 12
+
+"eu gosto de usar as setas do teclado!
+map <Left> <Left>
+map <Right> <Right>
+map <Up> <Up>
+map <Down> <Down>
+imap <up> <up>
+imap <down> <down>
+imap <left> <left>
+imap <right> <right>
+
+"configura o mouse 
+set mouse=a
+set ttymouse=xterm2
+
+End-of-message
+
+
+
