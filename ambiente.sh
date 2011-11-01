@@ -35,7 +35,7 @@ fi
 #instala as dependencias
 sudo apt-get install aptitude -y
 
-sudo aptitude install ruby1.8 ruby1.8-dev libgtkmm-2.4-dev libnotify-bin libqtwebkit-dev -y
+sudo aptitude install ruby1.8 ruby1.8-dev libgtkmm-2.4-dev libnotify-bin libqtwebkit-dev libgnomeui-0 -y
 sudo aptitude install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev  g++ openjdk-6-jre-headless subversion libmysqlclient-dev libcurl4-openssl-dev libmagick9-dev libpq-dev -y
 
 #instala o rvm
