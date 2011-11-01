@@ -69,20 +69,20 @@ sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 
 git clone https://github.com/krisleech/vimfiles ~/.vim
 cd ~/.vim
-rake install
+~/.rvm/bin/rake install
 
 echo ".vimrc copiado, não esqueça de editar..."
 cp ~/.vim/vimrc ~/.vimrc.temp
 
 cd ~/.vim/bundle/command-t/ruby/command-t/
 make clean
-ruby extconf.rb
+/usr/bin/ruby extconf.rb
 make
 cd ~
 
 ~/.rvm/bin/rvm use 1.9.3
 
-gem install bundler
+#gem install bundler
 
 #substitui o leader do .vimrc
 sed 's/","/";"/gpw ~/.vimrc' ~/.vimrc.temp
