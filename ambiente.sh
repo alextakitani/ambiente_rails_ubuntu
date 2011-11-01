@@ -85,7 +85,7 @@ cd ~
 #gem install bundler
 
 #substitui o leader do .vimrc
-sed 's/","/";"/gpw ~/.vimrc' ~/.vimrc.temp
+sed 's/","/";"/gp' ~/.vimrc.temp > ~/.vimrc
 rm .vimrc.temp
 
 ##carrega minhas configs de vim
