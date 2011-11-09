@@ -41,6 +41,12 @@ sudo aptitude install build-essential bison openssl libreadline6 libreadline6-de
 #instala o rvm
 if ! [ -s "$HOME/.rvm/scripts/rvm" ] ; then
 curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer -o rvm-installer ; chmod +x rvm-installer ; ./rvm-installer --version latest
+
+# se nao tiver bashrc, cria
+if [ ! -s "$HOME/.bashrc" ] ; then
+  echo 'if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi' > ~/.bashrc
+fi
+
 source ~/.bashrc
 rm rvm-installer
 fi
@@ -67,7 +73,7 @@ sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 
 ~/.rvm/bin/rvm use system
 
-git clone https://github.com/krisleech/vimfiles ~/.vim
+git clone git://github.com/alextakitani/vimfiles.git ~/.vim
 cd ~/.vim
 ~/.rvm/bin/rake install
 
@@ -114,6 +120,5 @@ nmap <C-s> :w<CR>
 imap <silent><C-s> <ESC>:w<CR>a
 
 End-of-message
-
 
 
