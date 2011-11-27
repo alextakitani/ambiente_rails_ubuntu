@@ -73,52 +73,20 @@ sudo ln -s /usr/bin/ack-grep /usr/local/bin/ack
 
 ~/.rvm/bin/rvm use system
 
-git clone git://github.com/alextakitani/vimfiles.git ~/.vim
+git clone git://github.com/shamanime/vimfiles.git ~/.vim
 cd ~/.vim
 ~/.rvm/bin/rake install
 
-echo ".vimrc copiado, não esqueça de editar..."
-cp ~/.vim/vimrc ~/.vimrc.temp
+#baixa o meu vimrc
+cd ~
+wget https://raw.github.com/alextakitani/vimconfig/master/vimrc
+mv vimrc .vimrc
 
-cd ~/.vim/bundle/command-t/ruby/command-t/
-make clean
-/usr/bin/ruby extconf.rb
+
+cd ~/.vim/bundle/Command-T/ruby/command-t
+ruby extconf.rb
 make
+
 cd ~
 
 ~/.rvm/bin/rvm use 1.9.3
-
-#gem install bundler
-
-#substitui o leader do .vimrc
-sed 's/","/";"/gp' ~/.vimrc.temp > ~/.vimrc
-rm .vimrc.temp
-
-##carrega minhas configs de vim
-# .vimrc.local
-
-cat > .vimrc.local <<End-of-message
-"configura fonte
-set guifont=Monospace\ 12
-
-"eu gosto de usar as setas do teclado!
-map <Left> <Left>
-map <Right> <Right>
-map <Up> <Up>
-map <Down> <Down>
-imap <up> <up>
-imap <down> <down>
-imap <left> <left>
-imap <right> <right>
-
-"configura o mouse 
-set mouse=a
-set ttymouse=xterm2
-
-"control+s salva
-nmap <C-s> :w<CR>
-imap <silent><C-s> <ESC>:w<CR>a
-
-End-of-message
-
-
